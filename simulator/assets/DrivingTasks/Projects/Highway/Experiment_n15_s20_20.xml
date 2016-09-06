@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+<comment></comment>
+<entry key="interaction">interaction.xml</entry>
+<entry key="verbose">false</entry>
+<entry key="scenario">scenario_experiment_n15_s20_20.xml</entry>
+<entry key="settings">settings.xml</entry>
+<entry key="scene">aamas_2lane_scene.xml</entry>
+</properties>

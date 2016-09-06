@@ -1,0 +1,25 @@
+syntax: glob
+
+.hg/
+.idea/
+.cache/
+target/
+bin/
+output/
+doc/
+log/
+.settings/
+OpenDS_beta.iml
+analyzerData/
+error.log
+.project
+.classpath
+*.iml
+*.so
+*.dll
+*.log
+.*.sw*
+
+syntax: regexp
+lwjgl[0-9]*.dll
+OpenAL[0-9]*.dll

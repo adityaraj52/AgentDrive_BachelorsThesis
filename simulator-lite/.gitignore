@@ -1,0 +1,25 @@
+syntax: glob
+
+target
+.hg
+.classpath
+.project
+.idea
+.cache
+target
+bin
+output
+out
+log
+.settings
+*.iml
+*.log
+*.so
+
+syntax: regexp
+
+\.orig\..*$
+\.orig$
+\.chg\..*$
+\.rej$
+\.conflict\~$

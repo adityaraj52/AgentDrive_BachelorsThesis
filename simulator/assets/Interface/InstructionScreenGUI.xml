@@ -1,0 +1,1380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<!-- load default styles and controls -->
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<useStyles filename="nifty-default-styles.xml" />
+	<useControls filename="nifty-default-controls.xml" />
+	<style id="console-red" base="button-font">
+		<attributes font="fonts/menu.fnt" color="#f00f" />
+	</style>
+	<style id="console-white" base="button-font">
+		<attributes font="fonts/menu.fnt" color="#ffff" />
+	</style>
+	<style id="console-font">
+		<attributes font="fonts/verdana-48-regular.fnt" color="#00ff" />
+	</style>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<!-- start screen -->
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+
+	<screen id="start"
+		controller="eu.opends.niftyGui.InstructionScreenGUIController">
+		
+		<layer id="instructionScreen_1" childLayout="vertical" backgroundColor="#0008" visible="true">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+        
+               	<panel childLayout="center" align="center" width="100%" height="30px" />
+	
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	   		<control name="label" text="Herzlich willkommen zu diesem Fahrsimulatorexperiment." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+        		</panel>
+			
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+           			<control name="label" text="Zunaechst setze bitte den Kopfhoerer fuer die gesamte Dauer des Experimentes auf." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+        		</panel>
+        		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+         	    
+         	    <panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Im Fahrsimulator wirst du auf einer kuenstlichen 5-spurigen Strecke unterwegs sein." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+        		</panel>
+          	    
+          	    <panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Deine Aufgabe ist grundsaetzlich, auf der mittleren Spur zu fahren" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+       			</panel>
+       	        
+       	        <panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="und diese so gut wie moeglich zu halten." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+       			</panel>
+       			
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+       	        <panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Du wirst auf dieser Strecke eine Vielzahl von Schilderbruecken durchfahren." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+       			</panel>
+       	        <panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Auf diesen Schilderbruecken werden jeweils 4 Objekte ueber den restlichen" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+       			</panel>
+       	        <panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="4 Spuren zu erkennen sein, die jeweils rot oder gruen sein koennen. " color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+       			</panel>
+       			
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+
+			<panel childLayout="vertical" align="center" width="100%" height="40%">
+        	   	<panel childLayout="center" align="center" width="40%" height="100%">
+					<image filename="Interface/images_instruction_screen/screenshot_experiment.png" 
+						height="100%" width="100%" >
+					</image>
+        		</panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+						<control id="vor" name="button" label="vor" height="100%" width="20%">
+							<effect>
+								<onClick name="focus" targetElement="#parent#parent#parent" />
+								<onClick name="show" targetElement="instructionScreen_1_2" />
+								<onClick name="hide" targetElement="instructionScreen_1" />
+							</effect>
+						</control>
+	        	</panel>
+			</panel>
+
+	    </layer>
+
+
+		<layer id="instructionScreen_1_2" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+        	   	<panel childLayout="center" align="center" width="100%" height="30px" />
+          		
+          		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Deine Aufgabe wird es sein, nach Erscheinen der Objekte so schnell wie moeglich" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+        		</panel>
+          	    <panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="ein enthaltenes Zielobjekt zu entdecken und das richtige Fahrmanoever auszuueben." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+       	        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Wird ein rotes Zielobjekt dargeboten bremse so schnell wie moeglich auf 20 km/h ab" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+					</panel>
+       	        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="und versuche dabei moeglichst nicht zu lenken. Erscheint ein gruenes Zielobjekt," color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+					</panel>
+       	        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="dann fahre so schnell wie moeglich auf die jeweilige Spur, ueber der das gruene" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+					</panel>
+       	        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Zielobjekt angezeigt wird und versuche dabei nicht zu bremsen." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+       				</panel>
+       				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+			
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+        	        	<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Um die Fahrmanoever zu ueben, wirst du jetzt eine Testfahrt absolvieren." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		                        </control>
+       				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+       	        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Deine Aufgabe ist es grundsaetzlich auf der mittleren Spur zu fahren und diese" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		                        </control>
+       				</panel>
+       	        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="so gut wie moeglich zu halten. Die Maximalgeschwindigkeit ist auf 60 km/h begrenzt." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		                        </control>
+        			</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text=" Du darfst in dieser Testfahrt deine Geschwindigkeit zwischen 40 km/h und 60 km/h" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		                        </control>
+        			</panel>
+                <panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="regulieren, je nach dem wie sicher du dich fuehlst. " color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px" />
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="In dieser Testfahrt ist auf der Schilderbruecke jeweils ein Objekt zu erkennen. " color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Handelt es sich um ein rotes Kreuz, bremse so schnell wie moeglich auf 20 km/h ab" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="und versuche dabei moeglichst nicht zu lenken, sondern die mittlere Spur zu halten." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Wird stattdessen ein gruener Pfeil dargeboten, wechsle so schnell wie moeglich" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="auf die Spur, ueber der der gruene Pfeil angezeigt wird. " color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<control id="zurueck" name="button" label="zurueck" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_1" />
+							<onClick name="hide" targetElement="instructionScreen_1_2" />
+						</effect>
+					</control>
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<control id="vor" name="button" label="vor" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_1_3" />
+							<onClick name="hide" targetElement="instructionScreen_1_2" />
+						</effect>
+					</control>
+	        	</panel>
+			</panel>
+
+	    </layer>		
+
+
+		<layer id="instructionScreen_1_3" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+         		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Nach jeder Schilderbruecke wirst du ueber den Kopfhoerer einen Signalton hoeren," color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="woraufhin du bitte wieder auf 60 km/h beschleunigst bzw. auf die mittlere Spur" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="zurueck faehrst. Beschleunige nicht bzw. fahre nicht vor dem Signalton zurueck!" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Versuche mit der Zeit deine Fahrgeschwindigkeit an das Limit von 60 km/h anzunaehern." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Diese Daten werden noch nicht aufgezeichnet." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Wenn du noch Fragen hast, wende dich bitte jetzt an die Versuchsleitung, wenn nicht" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="geht’s mit folgender Taste zur Untersuchung:" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+			</panel>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+        		<panel childLayout="center" align="center" width="10%" height="100%">
+					<image filename="Interface/images_instruction_screen/button.png" 
+						width="100%" height="100%">
+					</image>
+        		</panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<control id="zurueck" name="button" label="zurueck" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_1_2" />
+							<onClick name="hide" targetElement="instructionScreen_1_3" />
+						</effect>
+					</control>
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<control id="vor" name="button" label="start" height="100%" width="20%">
+						<interact onClick="clickStartButton()" />
+					</control>
+	               		</panel>
+			</panel>
+
+	    </layer>	
+
+
+		<layer id="instructionScreen_2" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+         		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Im Fahrsimulator wirst du erneut auf einer kuenstlichen 5-spurigen Strecke unterwegs sein." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Weiterhin ist deine Aufgabe grundsaetzlich auf der mittleren Spur mit 60 km/h zu fahren," color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="indem du das Gaspedal durchtrittst, und die Spur so gut wie moeglich zu halten." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Du durchfaehrst auf dieser Strecke eine Vielzahl von Schilderbruecken. Auf diesen" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="sind jeweils 4 Objekte zu erkennen, die jeweils rot oder gruen sein koennen." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="40%">
+        	   	<panel childLayout="center" align="center" width="40%" height="100%">
+					<image filename="Interface/images_instruction_screen/screenshot_experiment.png" 
+						height="100%" width="100%" >
+					</image>
+        		</panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+						<control id="vor" name="button" label="vor" height="100%" width="20%">
+							<effect>
+								<onClick name="focus" targetElement="#parent#parent#parent" />
+								<onClick name="show" targetElement="instructionScreen_2_2" />
+								<onClick name="hide" targetElement="instructionScreen_2" />
+							</effect>
+						</control>
+	        	</panel>
+			</panel>
+
+	    </layer>	
+
+
+		<layer id="instructionScreen_2_2" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+         	
+        	   	<panel childLayout="center" align="center" width="100%" height="30px" />
+          		
+          		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Eines dieser 4 Objekte entspricht einem der 4 folgenden Zielobjekte (Ampel, Traktor," color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Notarzt, Kinder) in den Farben Rot oder Gruen." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="30%">
+				<panel childLayout="horizontal" align="center" width="100%" height="42%">
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Ampel_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Traktor_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Notarzt_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Kinder_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>	
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />				
+                </panel>
+				<panel childLayout="vertical" align="center" width="100%" height="16%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="42%">
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Ampel_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Traktor_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Notarzt_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Kinder_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>	
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />				
+                </panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%">
+         	
+        	   	<panel childLayout="center" align="center" width="100%" height="30px" />
+          		
+          		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Die restlichen 3 Anzeigetafeln zeigen andere Objekte und sind fuer dich nicht relevant." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px" />
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Deine Aufgabe ist es, nach Erscheinen der Objekte so schnell wie moeglich das" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="enthaltene Zielobjekt zu entdecken und das richtige Fahrmanoever auszuueben." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Wird ein rotes Zielobjekt dargeboten bremse so schnell wie moeglich auf 20km/h ab" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="und versuche dabei nicht zu lenken. Erscheint ein gruenes Zielobjekt, dann wechsle" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="so schnell wie moeglich auf die jeweilige Spur, ueber der das gruene Zielobjekt" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="angezeigt wird und versuche dabei nicht zu bremsen. Erst wenn du den Signalton" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="ueber die Kopfhoerer hoerst, beschleunige wieder auf die Maximalgeschwindigkeit" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="von 60 km/h bzw. fahre zurueck auf die mittlere Spur." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<control id="zurueck" name="button" label="zurueck" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_2" />
+							<onClick name="hide" targetElement="instructionScreen_2_2" />
+						</effect>
+					</control>
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<control id="vor" name="button" label="vor" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_2_3" />
+							<onClick name="hide" targetElement="instructionScreen_2_2" />
+						</effect>
+					</control>
+	        	</panel>
+			</panel>
+
+	    </layer>		
+
+
+		<layer id="instructionScreen_2_3" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+         		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Achtung: In manchen Durchgaengen ist auch keines der Zielobjekte unter den 4 Objekten." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Dann darfst du kein Fahrmanoever ausueben, fahre also mit konstanter Geschwindigkeit" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="von 60 km/h auf der mittleren Spur weiter!" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Waehrend der Anfahrt auf eine Schilderbruecke wirst du jeweils einen Objektnamen" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="ueber den Kopfhoerer dargeboten bekommen. Reagiere bitte immer nur auf die sichtbaren" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Zielobjekte und nicht auf die gehoerten Woerter." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Die ueber den Kopfhoerer gehoerten Woerter sind etwas zeitkomprimiert" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="und fuer deine Aufgabe nicht informativ." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Es gibt auch einige Durchgaenge ganz ohne Darbietung auf dem Kopfhoerer." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Zur Uebung kannst du nun eine Testfahrt im Simulator absolvieren." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Diese Daten werden noch nicht aufgezeichnet." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Wenn du noch Fragen hast, wende dich bitte jetzt an die Versuchsleitung, wenn nicht" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="geht’s mit folgender Taste zur Untersuchung:" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+        		<panel childLayout="center" align="center" width="10%" height="100%">
+					<image filename="Interface/images_instruction_screen/button.png" 
+						width="100%" height="100%">
+					</image>
+        		</panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<control id="zurueck" name="button" label="zurueck" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_2_2" />
+							<onClick name="hide" targetElement="instructionScreen_2_3" />
+						</effect>
+					</control>
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<control id="vor" name="button" label="start" height="100%" width="20%">
+						<interact onClick="clickStartButton()" />
+					</control>
+	        	</panel>
+			</panel>
+
+	    </layer>
+
+
+		<layer id="instructionScreen_3" childLayout="vertical" backgroundColor="#0008" visible="false">
+		
+			<panel childLayout="vertical" align="center" width="100%">
+			
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Jetzt geht die eigentliche Untersuchung los." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Deine Aufgabe bleibt die gleiche: Reagiere so schnell, aber auch so korrekt wie moeglich" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="auf die Farbe des Zielobjekts." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Zur Erinnerung sind hier nochmal die Zielobjekte (Ampel, Traktor, Notarzt, Kinder):" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="30%">
+				<panel childLayout="horizontal" align="center" width="100%" height="42%">
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Ampel_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Traktor_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Notarzt_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Kinder_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>	
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />				
+                </panel>
+				<panel childLayout="vertical" align="center" width="100%" height="16%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="42%">
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Ampel_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Traktor_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Notarzt_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Kinder_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>	
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />				
+                </panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%">
+        		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Halte deine Geschwindigkeit bitte konstant beim Maximum von 60 km/h," color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="indem du das Gaspedal ganz durchtrittst." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+			
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+						<control id="vor" name="button" label="vor" height="100%" width="20%">
+							<effect>
+								<onClick name="focus" targetElement="#parent#parent#parent" />
+								<onClick name="show" targetElement="instructionScreen_3_2" />
+								<onClick name="hide" targetElement="instructionScreen_3" />
+							</effect>
+						</control>
+	        	</panel>
+			</panel>
+
+	    </layer>
+	
+		
+		<layer id="instructionScreen_3_2" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+         	
+        	   	<panel childLayout="center" align="center" width="100%" height="30px" />
+          		
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Ob deine Antwort richtig war, deine Reaktionszeit und deine Spurhalteleistung" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="werden nun von dem Simulator aufgezeichnet. Bitte versuche immer korrekt" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="zu reagieren und dabei so schnell wie moeglich zu sein." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Diese Fahrt dauert etwa … Minuten. " color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Wenn du noch Fragen hast, wende dich bitte jetzt an die Versuchsleitung, wenn nicht" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="geht’s mit folgender Taste zur Untersuchung:" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+        		<panel childLayout="center" align="center" width="10%" height="100%">
+					<image filename="Interface/images_instruction_screen/button.png" 
+						width="100%" height="100%">
+					</image>
+        		</panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<control id="zurueck" name="button" label="zurueck" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_3" />
+							<onClick name="hide" targetElement="instructionScreen_3_2" />
+						</effect>
+					</control>
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<control id="vor" name="button" label="start" height="100%" width="20%">
+						<interact onClick="clickStartButton()" />
+					</control>
+	        	</panel>
+			</panel>
+						
+	    </layer>
+	    
+	    
+	    <layer id="instructionScreen_4" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+         		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Deine Aufgabe bleibt im zweiten Teil genau die gleiche wie im ersten Teil." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		        		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Waehrend der Anfahrt auf eine Schilderbruecke wirst du auch jeweils wieder" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="einen Objektnamen ueber den Kopfhoerer dargeboten bekommen." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Reagiere bitte immer nur auf die sichtbaren Zielobjekte und nicht auf die" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="gehoerten Woerter." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Die gehoerten Woerter auf dem Kopfhoerer sind etwas zeitkomprimiert und fuer deine" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Aufgabe informativ. In vielen Fahrten wird das Zielobjekt auch vorher ueber" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text=" Kopfhoerer dargeboten. Du kannst dich aber nicht vollstaendig darauf verlassen," color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="da das gehoerte Wort und das Zielobjekt nicht immer uebereinstimmen." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Es gibt auch diesmal wieder einige Durchgaenge ganz ohne Darbietung auf dem Kopfhoerer." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+          		
+          		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Deine Aufgabe ist es immer so schnell, aber auch so korrekt wie moeglich" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="auf die Farbe des Zielobjekts zu reagieren." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+						<control id="vor" name="button" label="vor" height="100%" width="20%">
+							<effect>
+								<onClick name="focus" targetElement="#parent#parent#parent" />
+								<onClick name="show" targetElement="instructionScreen_4_2" />
+								<onClick name="hide" targetElement="instructionScreen_4" />
+							</effect>
+						</control>
+	        	</panel>
+			</panel>
+
+	    </layer>	
+
+
+		<layer id="instructionScreen_4_2" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+         	        		
+        		<panel childLayout="center" align="center" width="100%" height="30px" />
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Zur Erinnerung hier nochmal die Zielobjekte (Ampel, Traktor, Notarzt, Kinder):" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="30%">
+				<panel childLayout="horizontal" align="center" width="100%" height="42%">
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Ampel_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Traktor_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Notarzt_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Kinder_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>	
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />				
+                </panel>
+				<panel childLayout="vertical" align="center" width="100%" height="16%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="42%">
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Ampel_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Traktor_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Notarzt_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Kinder_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>	
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />				
+                </panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%">
+         	
+        	   	<panel childLayout="center" align="center" width="100%" height="30px" />
+          		
+          		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Zur Gewoehnung kannst du nun eine weitere kurze Testfahrt im Simulator absolvieren." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px" />
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Halte auch hier deine Geschwindigkeit bitte konstant beim Maximum von 60 km/h," color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="indem du das Gaspedal durchtrittst." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+        		<panel childLayout="center" align="center" width="100%" height="30px" />
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Diese Daten werden noch nicht aufgezeichnet." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Wenn du noch Fragen hast, wende dich bitte jetzt an die Versuchsleitung, wenn nicht" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="geht’s mit folgender Taste zur Untersuchung:" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+        		<panel childLayout="center" align="center" width="10%" height="100%">
+					<image filename="Interface/images_instruction_screen/button.png" 
+						width="100%" height="100%">
+					</image>
+        		</panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<control id="zurueck" name="button" label="zurueck" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_4" />
+							<onClick name="hide" targetElement="instructionScreen_4_2" />
+						</effect>
+					</control>
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<control id="vor" name="button" label="start" height="100%" width="20%">
+						<interact onClick="clickStartButton()" />
+					</control>
+	        	</panel>
+			</panel>
+
+	    </layer>
+
+
+		<layer id="instructionScreen_5" childLayout="vertical" backgroundColor="#0008" visible="false">
+		
+			<panel childLayout="vertical" align="center" width="100%">
+			
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Jetzt geht die eigentliche Untersuchung los." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Deine Aufgabe bleibt die gleiche: Reagiere so schnell, aber auch so korrekt wie moeglich" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="auf die Farbe des Zielobjekts." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+        	    	<control name="label" text="Zur Erinnerung sind hier nochmal die Zielobjekte (Ampel, Traktor, Notarzt, Kinder):" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+		            </control>
+        		</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="30%">
+				<panel childLayout="horizontal" align="center" width="100%" height="42%">
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Ampel_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Traktor_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Notarzt_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Kinder_rot/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>	
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />				
+                </panel>
+				<panel childLayout="vertical" align="center" width="100%" height="16%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="42%">
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Ampel_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Traktor_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Notarzt_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />
+					<panel childLayout="center" align="center" width="10%" height="100%">
+						<image filename="Models/sign_panels/Kinder_gruen/sign_pic.png" 
+							height="100%" width="100%" >
+						</image>
+        			</panel>	
+					<panel childLayout="vertical" align="center" width="12%" height="100%" />				
+                </panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%">
+        		
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Halte deine Geschwindigkeit bitte konstant beim Maximum von 60 km/h," color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="indem du das Gaspedal ganz durchtrittst." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+			
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+						<control id="vor" name="button" label="vor" height="100%" width="20%">
+							<effect>
+								<onClick name="focus" targetElement="#parent#parent#parent" />
+								<onClick name="show" targetElement="instructionScreen_5_2" />
+								<onClick name="hide" targetElement="instructionScreen_5" />
+							</effect>
+						</control>
+	        	</panel>
+			</panel>
+
+	    </layer>
+	
+		
+		<layer id="instructionScreen_5_2" childLayout="vertical" backgroundColor="#0008" visible="false">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+         	
+        	   	<panel childLayout="center" align="center" width="100%" height="30px" />
+          		
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Ob deine Antwort richtig war, deine Reaktionszeit und deine Spurhalteleistung" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="werden nun von dem Simulator aufgezeichnet. Bitte versuche immer korrekt" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="zu reagieren und dabei so schnell wie moeglich zu sein." color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Diese Fahrt dauert etwa … Minuten. " color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+				<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="Wenn du noch Fragen hast, wende dich bitte jetzt an die Versuchsleitung, wenn nicht" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+        		
+        		<panel childLayout="center" align="center" width="100%" height="30px">
+					<control name="label" text="geht’s mit folgender Taste zur Untersuchung:" color="#ffffffff"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+				</panel>
+				
+				<panel childLayout="center" align="center" width="100%" height="30px" />
+				
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+        		<panel childLayout="center" align="center" width="10%" height="100%">
+					<image filename="Interface/images_instruction_screen/button.png" 
+						width="100%" height="100%">
+					</image>
+        		</panel>
+			</panel>
+			
+			<panel childLayout="vertical" align="center" width="100%" height="*"/>
+
+			<panel childLayout="vertical" align="center" width="100%" height="10%">
+				<panel childLayout="vertical" align="center" width="100%" height="50%" />
+				<panel childLayout="horizontal" align="center" width="100%" height="50%">
+					<control id="zurueck" name="button" label="zurueck" height="100%" width="20%">
+						<effect>
+							<onClick name="focus" targetElement="#parent#parent#parent" />
+							<onClick name="show" targetElement="instructionScreen_5" />
+							<onClick name="hide" targetElement="instructionScreen_5_2" />
+						</effect>
+					</control>
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<panel childLayout="center" align="center" width="20%" height="100%" />
+					<control id="vor" name="button" label="start" height="100%" width="20%">
+						<interact onClick="clickStartButton()" />
+					</control>
+	        	</panel>
+			</panel>
+						
+	    </layer>
+		
+	</screen>
+
+</nifty>
